@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Photo Graphy</title>
+    <title>Photography Blog</title>
 
     <!-- Bootstrap core CSS -->
    
@@ -19,7 +19,7 @@
     <!-- Custom styles for this template -->
     <link href="css/navmenu-reveal.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <!-- <link href="css/full-slider.css" rel="stylesheet"> -->
+    <link href="css/full-slider.css" rel="stylesheet">
     
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,17 +29,17 @@
     <![endif]-->
   </head>
 
-  <body>
-  <div class="bar">
+  <body class="contact-page">
+ <div class="bar">
     <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
     </button>
-  </div>  
+  </div>
     <div class="navmenu navmenu-default navmenu-fixed-left">
       
-     <ul class="nav navmenu-nav">
+      <ul class="nav navmenu-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="works.html">Works</a></li>
         <li><a href="gallery.html">Gallery</a></li>
@@ -58,72 +58,57 @@
       <div class="copyright-text">©Copyright <a href="https://themewagon.com/"> ThemeWagon</a> 2015 </div>
     </div>
 
-    <div id="myCarousel" class="canvas carousel slide" data-ride="carousel">
-    <!-- Full Page Image Background Carousel Header -->
-    
-        <!-- Indicators -->
-        <ol class="carousel-indicators xtra-border">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+      
 
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <!-- <div class="fill" style="background-image:url('img/bg.jpg');"></div> -->
-                <img src="img/bg.jpg" alt="First slide">
-                <div class="carousel-caption">
-                  <h2 class="sub-title-home">We Don't Take Photograph</h2>
-                  <h1 class="title-home">We Make It</h1>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <!-- <div class="fill" style="background-image:url('img/bg1.jpg');"></div> -->
-                <img src="img/bg1.jpg" alt="Second slide">
-                <div class="carousel-caption">
-                  <h2 class="sub-title-home">We Don't Take Photograph</h2>
-                  <h1 class="title-home">We Make It</h1>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <!-- <div class="fill" style="background-image:url('img/bg3.jpg');"></div> -->
-                <img src="img/bg3.jpg" alt="Third slide">
-                <div class="carousel-caption">
-                  <h2 class="sub-title-home">We Don't Take Photograph</h2>
-                  <h1 class="title-home">We Make It</h1>
-                </div>
-            </div>
+    <div class="canvas contact-page">
+      <div class="contact-bg col-md-8 col-sm-12">
+        <img src="img/dolon.jpg" alt="" width="100%">
+      </div>
+      <div class="col-md-4 col-sm-12 contact-bar">
+        <img class="map-img" src="img/map.jpg" alt="" width="100%">
+        <h3 class="interest-text text-center"> Thanks for your Interest </h3>
+        <br>
+        <div class="col-md-6 add-text">
+        44, Akhaliya Rd. Akhaliya
+        CA 94019. USA CO.
+        (561) 456-4567
         </div>
-    </header>
-      <!-- <div class="navbar navbar-default navbar-fixed-top">
-        
-      </div> -->
-
-      <div class="container page-container">
-        <div class="home-page-header">
-         
-         <!-- <div class="col-md-4 col-md-offset-4"><img src="img/zigzag.png" width="400" height="30"></div> -->
+        <div class="col-md-6 add-text">
+        Summer Office Ours
+        (March-October)
+        Mon-Fri (am-6am PST)
         </div>
-        
-      </div><!-- /.container -->
+        <br>
+        <div class="col-sm-12 col-md-12">
+            <form method="post" action="contact.php">
+                <div class="controls controls-row">
+                   <div class="">
+                    <input id="name" name="name" type="text" class="form-control" placeholder="Name"> 
+                    </div>
+                     <div class="">
+                      <input id="email" name="email" type="email" class="col-md-6 form-control" placeholder="Email address">
+                    </div>
+                </div>
+                <div class="controls">
+                    <textarea id="message" name="message" class="col-md-12" placeholder="Your Message" rows="5"></textarea>
+                </div>
+                  
+                <div class="controls btn-full">
+                    <button id="contact-submit" name="submit" value="Submit" type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+      </div>
     </div>
+
+      
     
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="dist/js/jasny-bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-    $('.carousel').carousel({
-        interval: 6000 //changes the speed
-    })
-    </script>
   </body>
 </html>
