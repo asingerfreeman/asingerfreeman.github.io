@@ -85,7 +85,7 @@ export async function renderBody() {
 }
 
 export async function loadIntoDOM() {
-    await hellowWorld()
+    await helloWorld()
 
     
 }
