@@ -1,5 +1,7 @@
 const $root = $("#root");
-
+export async function helloWorld() {
+    $("#root").append("hello World")
+}
 export async function renderheader() {
     $root.append(`<header class="header-section">
         <div class="container-fluid">
@@ -83,9 +85,7 @@ export async function renderBody() {
 }
 
 export async function loadIntoDOM() {
-    console.log("reached")
-    await renderheader();
-    await renderBody();
+    await hellowWorld()
 
     
 }
