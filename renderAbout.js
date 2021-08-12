@@ -83,6 +83,7 @@ export async function renderBody() {
 }
 
 export async function loadIntoDOM() {
+    console.log("reached")
     await renderheader();
     await renderBody();
 
