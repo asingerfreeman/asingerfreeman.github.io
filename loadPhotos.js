@@ -4,7 +4,7 @@ let URLs = [['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg'
 
 function loadImages(numClasses =1){
     let i = 0
-    while (i < numImages){
+    while (i < numClasses){
         let j = 0
         while (j < URLs.length){
             const img = document.createElement('img')
