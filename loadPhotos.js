@@ -7,9 +7,10 @@ function loadImages(numClasses =1){
     while (i < numClasses){
         let j = 0
         while (j < URLs.length){
-            const img = document.createElement('img')
-            img.src = URLs[i][j]
-            container.appendChild(img)
+            const imgDiv = document.createElement('div')
+            imgDiv.className = "pf-item set-bg snow"
+            imgDiv.style.backgroundImage = URLs[i][j]
+            container.appendChild(imgDiv)
             j++
         }
         i++
