@@ -1,4 +1,4 @@
-const container = document.querySelector('.photo-holder')
+const container = document.querySelector('.container')
 
 let URLs = [['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg', 'img/snow/snow-4.jpg'],['img/desert/desert-1.jpg', 'img/desert/desert-2.jpg', 'img/desert/desert-3.jpg', 'img/desert/desert-4.jpg']]
 
