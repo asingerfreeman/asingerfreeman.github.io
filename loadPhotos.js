@@ -7,7 +7,9 @@ function loadImages(numClasses =1){
     console.log("reached")
     while (i < numClasses){
         let j = 0
+        console.log("1")
         while (j < URLs.length){
+            console.log("2")
             const imgDiv = document.createElement('div')
             imgDiv.className = "pf-item set-bg snow"
             imgDiv.style.backgroundImage = URLs[i][j]
