@@ -1,45 +1,42 @@
 const container = document.querySelector('.photo-holder')
 
-let URLs = [['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg', 'img/snow/snow-4.jpg'],['img/desert/desert-1.jpg', 'img/desert/desert-2.jpg', 'img/desert/desert-3.jpg', 'img/desert/desert-4.jpg']]
+let URLs = ['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg', 'img/snow/snow-4.jpg','img/desert/desert-1.jpg', 'img/desert/desert-2.jpg', 'img/desert/desert-3.jpg', 'img/desert/desert-4.jpg']
 
-function loadImages(numClasses =1){
+let count = 0
+
+function loadImages(numPhotos =5){
     let i = 0
-    while (i < numClasses){
-        let j = 0
-        while (j < URLs.length){
-            const img = document.createElement('div')
-            img.classList.add('portfolio-filter')
-            const imgTest = document.createElement('div')
-            imgTest.style.backgroundImage = `url('${URLs[i][j]}')`
-            imgTest.classList.add("pf-item")
-            imgTest.classList.add("set-bg")
-            imgTest.classList.add("water")
-            
-            const anchor = document.createElement("a")
-            anchor.classList.add("pf-icon")
-            anchor.classList.add("image-popup")
-            anchor.href = URLs[i][j]
-            
-            const span = document.createElement("span")
-            span.classList.add("icon_plus")
+    while (i < numPhotos && count < URLs.length){
+        const img = document.createElement('div')
+        img.classList.add('portfolio-filter')
+        const imgTest = document.createElement('div')
+        imgTest.style.backgroundImage = `url('${URLs[count]}')`
+        imgTest.classList.add("pf-item")
+        imgTest.classList.add("set-bg")
+        imgTest.classList.add("water")
+        
+        const anchor = document.createElement("a")
+        anchor.classList.add("pf-icon")
+        anchor.classList.add("image-popup")
+        anchor.href = URLs[count]
+        
+        const span = document.createElement("span")
+        span.classList.add("icon_plus")
 
-            const label = document.createElement("div")
-            label.classList.add("pf-text")
-            label.innerHTML = "<h4>Name</h4><span>Class</span>"
+        const label = document.createElement("div")
+        label.classList.add("pf-text")
+        label.innerHTML = "<h4>Name</h4><span>Class</span>"
 
-            anchor.appendChild(span)
-            imgTest.appendChild(anchor)
-            imgTest.appendChild(label)
-            img.appendChild(imgTest)
-            container.appendChild(img)
-
-            j++
-        }
+        anchor.appendChild(span)
+        imgTest.appendChild(anchor)
+        imgTest.appendChild(label)
+        img.appendChild(imgTest)
+        container.appendChild(img)
         i++
+        count++
     }
 }
 
-loadImages()
 
 window.addEventListener('scroll', () => {
     if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
