@@ -4,11 +4,15 @@ let URLs = ['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg',
 
 let count = 0
 
+let img
+
 function loadImages(numPhotos =5){
     let i = 0
+    img = document.createElement('div')
+    img.classList.add('portfolio-filter')
     while (i < numPhotos && count < URLs.length){
-        const img = document.createElement('div')
-        img.classList.add('portfolio-filter')
+        
+        
         const imgTest = document.createElement('div')
         imgTest.style.backgroundImage = `url('${URLs[count]}')`
         imgTest.classList.add("pf-item")
@@ -31,30 +35,10 @@ function loadImages(numPhotos =5){
         imgTest.appendChild(anchor)
         imgTest.appendChild(label)
         img.appendChild(imgTest)
-        container.appendChild(img)
         i++
         count++
     }
-}
-
-
-window.addEventListener('scroll', () => {
-    if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
-        loadImages()
-        /*------------------
-        Background Set
-    --------------------*/
-     // Search model
-    $('.search-switch').on('click', function () {
-        $('.search-model').fadeIn(400);
-    });
-
-    $('.search-close-switch').on('click', function () {
-        $('.search-model').fadeOut(400, function () {
-            $('#search-input').val('');
-        });
-    });
-
+    container.appendChild(img)
     // Isotppe Filter
     $(".filter-controls li").on('click', function() {
         var filterData = $(this).attr("data-filter");
@@ -91,55 +75,7 @@ window.addEventListener('scroll', () => {
         allowParentLinks: true
     });
 
-    /*------------------
-        Carousel Slider
-    --------------------*/
-    var hero_s = $(".hs-slider");
-    hero_s.owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: true,
-        items: 1,
-        dots: false,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        navText: ['<span class="arrow_carrot-left"></span>', '<span class="arrow_carrot-right"></span>'],
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true
-    });
-
-    /*------------------
-        Team Slider
-    --------------------*/
-    $(".categories-slider").owlCarousel({
-        loop: true,
-        margin: 20,
-        items: 3,
-        dots: false,
-        nav: true,
-        navText: ['<span class="arrow_carrot-left"></span>', '<span class="arrow_carrot-right"></span>'],
-        stagePadding: 120,
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true,
-        responsive: {
-            0: {
-                items: 1,
-                stagePadding: 0
-            },
-            768: {
-                items: 2,
-                stagePadding: 0
-            },
-            992: {
-                items: 2
-            },
-            1200: {
-                items: 3
-            }
-        }
-    });
+    
 
     /*------------------
         Image Popup
@@ -147,13 +83,11 @@ window.addEventListener('scroll', () => {
     $('.image-popup').magnificPopup({
         type: 'image'
     });
+}
 
-    /*------------------
-        Video Popup
-    --------------------*/
-    $('.video-popup').magnificPopup({
-        type: 'iframe'
-    });
 
+window.addEventListener('scroll', () => {
+    if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
+        loadImages()
     }
 })
