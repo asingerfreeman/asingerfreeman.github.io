@@ -1,44 +1,48 @@
 const container = document.querySelector('.photo-holder')
 
-let URLs = ['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg', 'img/snow/snow-4.jpg','img/desert/desert-1.jpg', 'img/desert/desert-2.jpg', 'img/desert/desert-3.jpg', 'img/desert/desert-4.jpg']
+let URLs = [['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg', 'img/snow/snow-4.jpg'],['img/desert/desert-1.jpg', 'img/desert/desert-2.jpg', 'img/desert/desert-3.jpg', 'img/desert/desert-4.jpg']]
 
 let count = 0
 
 let img
 
-function loadImages(numPhotos =5){
+function loadImages(numPhotos =1){
     let i = 0
+    let j = 0
     img = document.createElement('div')
     img.classList.add('portfolio-filter')
-    while (i < numPhotos && count < URLs.length){
-        
-        
-        const imgTest = document.createElement('div')
-        imgTest.style.backgroundImage = `url('${URLs[count]}')`
-        imgTest.classList.add("pf-item")
-        imgTest.classList.add("set-bg")
-        imgTest.classList.add("water")
-        
-        const anchor = document.createElement("a")
-        anchor.classList.add("pf-icon")
-        anchor.classList.add("image-popup")
-        anchor.href = URLs[count]
-        
-        const span = document.createElement("span")
-        span.classList.add("icon_plus")
+    while (j < numPhotos) {
+        while (count < URLs.length && i < URLs[j].length){
 
-        const label = document.createElement("div")
-        label.classList.add("pf-text")
-        label.innerHTML = "<h4>Name</h4><span>Class</span>"
+            const imgTest = document.createElement('div')
+            imgTest.style.backgroundImage = `url('${URLs[count][i]}')`
+            imgTest.classList.add("pf-item")
+            imgTest.classList.add("set-bg")
+            imgTest.classList.add("water")
+            
+            const anchor = document.createElement("a")
+            anchor.classList.add("pf-icon")
+            anchor.classList.add("image-popup")
+            anchor.href = URLs[count]
+            
+            const span = document.createElement("span")
+            span.classList.add("icon_plus")
 
-        anchor.appendChild(span)
-        imgTest.appendChild(anchor)
-        imgTest.appendChild(label)
-        img.appendChild(imgTest)
-        i++
+            const label = document.createElement("div")
+            label.classList.add("pf-text")
+            label.innerHTML = "<h4>Name</h4><span>Class</span>"
+
+            anchor.appendChild(span)
+            imgTest.appendChild(anchor)
+            imgTest.appendChild(label)
+            img.appendChild(imgTest)
+            i++
+            
+        }
+        container.appendChild(img)
         count++
+        j++
     }
-    container.appendChild(img)
     // Isotppe Filter
     $(".filter-controls li").on('click', function() {
         var filterData = $(this).attr("data-filter");
