@@ -1,6 +1,10 @@
 const container = document.querySelector('.photo-holder')
+let desert = ['img/desert/desert-1.jpg', 'img/desert/desert-2.jpg', 'img/desert/desert-3.jpg', 'img/desert/desert-4.jpg', 'img/desert/desert-5.jpg', 'img/desert/desert-6.jpg', 'img/desert/desert-7.jpg', 'img/desert/desert-8.jpg', 'img/desert/desert-9.jpg', 'img/desert/desert-10.jpg', 'img/desert/desert-11.jpg']
 
-let URLs = [['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg', 'img/snow/snow-4.jpg'],['img/desert/desert-1.jpg', 'img/desert/desert-2.jpg', 'img/desert/desert-3.jpg', 'img/desert/desert-4.jpg']]
+console.log(desert)
+let URLs = [desert, ['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg', 'img/snow/snow-4.jpg'],desert]
+console.log(URLs)
+
 
 let count = 0
 
@@ -12,7 +16,10 @@ function loadImages(numPhotos =1){
     img = document.createElement('div')
     img.classList.add('portfolio-filter')
     while (j < numPhotos) {
-        while (count < URLs.length && i < URLs[j].length){
+        console.log(URLs.length)
+        console.log(URLs[j].length)
+        console.log(URLs[j])
+        while (count < URLs.length && i < URLs[j].length && URLs[count][i] != undefined){
 
             const imgTest = document.createElement('div')
             imgTest.style.backgroundImage = `url('${URLs[count][i]}')`
@@ -23,7 +30,7 @@ function loadImages(numPhotos =1){
             const anchor = document.createElement("a")
             anchor.classList.add("pf-icon")
             anchor.classList.add("image-popup")
-            anchor.href = URLs[count]
+            anchor.href = URLs[count][i]
             
             const span = document.createElement("span")
             span.classList.add("icon_plus")
