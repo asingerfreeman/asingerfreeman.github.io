@@ -1,9 +1,12 @@
 const container = document.querySelector('.photo-holder')
 let desert = ['img/desert/desert-1.jpg', 'img/desert/desert-2.jpg', 'img/desert/desert-3.jpg', 'img/desert/desert-4.jpg', 'img/desert/desert-5.jpg', 'img/desert/desert-6.jpg', 'img/desert/desert-7.jpg', 'img/desert/desert-8.jpg', 'img/desert/desert-9.jpg', 'img/desert/desert-10.jpg', 'img/desert/desert-11.jpg']
+let flowers = ['img/flowers/flowers-1.jpg', 'img/flowers/flowers-2.jpg', 'img/flowers/flowers-3.jpg']
+let forest = ['img/forest/forest-1.jpg', 'img/forest/forest-2.jpg', 'img/forest/forest-3.jpg', 'img/forest/forest-4.jpg', 'img/forest/forest-5.jpg', 'img/forest/forest-6.jpg', 'img/forest/forest-7.jpg', 'img/forest/forest-8.jpg', 'img/forest/forest-9.jpg', 'img/forest/forest-10.jpg', 'img/forest/forest-11.jpg', 'img/forest/forest-12.jpg', 'img/forest/forest-13.jpg']
+let mountain = ['img/mountain/mountain-1.jpg','img/mountain/mountain-2.jpg', 'img/mountain/mountain-3.jpg', 'img/mountain/mountain-4.jpg', 'img/mountain/mountain-5.jpg', 'img/mountain/mountain-6.jpg','img/mountain/mountain-7.jpg', 'img/mountain/mountain-8.jpg','img/mountain/mountain-9.jpg', 'img/mountain/mountain-10.jpg','img/mountain/mountain-11.jpg','img/mountain/mountain-12.jpg','img/mountain/mountain-13.jpg','img/mountain/mountain-14.jpg','img/mountain/mountain-15.jpg','img/mountain/mountain-16.jpg']
+let snow = ['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg', 'img/snow/snow-4.jpg', 'img/snow/snow-5.jpg', 'img/snow/snow-6.jpg', 'img/snow/snow-7.jpg', 'img/snow/snow-8.jpg', 'img/snow/snow-9.jpg']
+let water = ['img/water/water-1.jpg', 'img/water/water-2.jpg', 'img/water/water-3.jpg', 'img/water/water-4.jpg', 'img/water/water-5.jpg', 'img/water/water-6.jpg', 'img/water/water-7.jpg', 'img/water/water-8.jpg', 'img/water/water-9.jpg', 'img/water/water-10.jpg', 'img/water/water-11.jpg', 'img/water/water-12.jpg', 'img/water/water-13.jpg', 'img/water/water-14.jpg', 'img/water/water-15.jpg','img/water/water-16.jpg','img/water/water-17.jpg', 'img/water/water-18.jpg']
 
-console.log(desert)
-let URLs = [desert, ['img/snow/snow-1.jpg', 'img/snow/snow-2.jpg', 'img/snow/snow-3.jpg', 'img/snow/snow-4.jpg'],desert]
-console.log(URLs)
+let URLs = [water, mountain, forest, flowers, snow,desert]
 
 
 let count = 0
@@ -50,6 +53,8 @@ function loadImages(numPhotos =1){
         count++
         j++
     }
+
+
     // Isotppe Filter
     $(".filter-controls li").on('click', function() {
         var filterData = $(this).attr("data-filter");
