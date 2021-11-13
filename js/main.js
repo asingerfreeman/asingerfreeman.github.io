@@ -38,6 +38,49 @@
         });
     });
 
+    $(".waterFilter").on('click', function() {
+        console.log("Water")
+        if ($(this).hasClass("notAdded")){
+            loadImages(1,0)
+            $(this).removeClass('notAdded');
+            console.log("water")
+        }
+        $(this).addClass('active');
+        
+    });
+
+    $(".mountainFilter").on('click', function() {
+        if ($(this).hasClass("notAdded")){
+            loadImages(1,1)
+            $(this).removeClass('notAdded');
+        }
+        $(this).addClass('active');
+    });
+
+    $(".forestFilter ").on('click', function() {
+        if ($(this).hasClass("notAdded")){
+            loadImages(1,2)
+            $(this).removeClass('notAdded');
+        }
+        $(this).addClass('active');
+    });
+
+    $(".plantFilter").on('click', function() {
+        if ($(this).hasClass("notAdded")){
+            loadImages(1,3)
+            $(this).removeClass('notAdded');
+        }
+        $(this).addClass('active');
+    });
+
+    $(".snowFilter ").on('click', function() {
+        if ($(this).hasClass("notAdded")){
+            loadImages(1,4)
+            $(this).removeClass('notAdded');
+        }
+        $(this).addClass('active');
+    });
+
     // Isotppe Filter
     $(".filter-controls li").on('click', function() {
         var filterData = $(this).attr("data-filter");
